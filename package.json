@@ -1,0 +1,29 @@
+{
+  "name": "gulp-inject-version",
+  "version": "1.0.0",
+  "description": "Inject a package version into text based files",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "^3.0.3",
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.8"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dvinciinteractive/gulp-inject-version.git"
+  },
+  "author": "d'Vinci Interactive <developers@dvinci.com> (http://www.dvinci.com/)",
+  "license": "Proprietary",
+  "bugs": {
+    "url": "https://github.com/dvinciinteractive/gulp-inject-version/issues"
+  },
+  "homepage": "https://github.com/dvinciinteractive/gulp-inject-version"
+}
