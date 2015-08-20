@@ -1,0 +1,15 @@
+# Dependency installations
+bower_components
+node_modules
+
+# Tool output
+npm-debug.log
+
+# IDE meta
+nbproject
+
+# OS Junk
+.DS_Store
+
+# Build location 
+dist
