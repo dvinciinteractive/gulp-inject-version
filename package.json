@@ -1,6 +1,6 @@
 {
   "name": "gulp-inject-version",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Inject a package version into text based files",
   "main": "index.js",
   "dependencies": {

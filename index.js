@@ -54,7 +54,7 @@ module.exports = function (opts) {
 
     for (opt_key in defaults) {
         if (Object.prototype.hasOwnProperty.call(defaults, opt_key)) {
-            opts[opt_key] = opts[opt_key] || defaults[opt_key];
+            opts[opt_key] = (opts[opt_key] !== undefined) ? opts[opt_key] : defaults[opt_key];
         }
     }
 
