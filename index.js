@@ -7,7 +7,7 @@ var fs = require('fs'),
         version_property: 'version',
         prepend: 'v',
         append: '',
-        replace: '%%GULP_INJECT_VERSION%%'
+        replace: /%%GULP_INJECT_VERSION%%/g
     };
 
 module.exports = function (opts) {
