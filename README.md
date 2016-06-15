@@ -56,4 +56,4 @@ package_file     | string | The JSON containing file from which we should read t
 version_property | string | The name of the property that holds the version text within the JSON file     | 'version'
 prepend          | string | A string to prepend to the outputted version text                             | 'v'
 append           | string | A string to append to the outputted version text                              | ''
-replace          | string | The placeholder text to be replaced with the version text in the source files | '%%GULP_INJECT_VERSION%%'
+replace          | string | The text or pattern to be sought out and replaced with the version text in the source files | /%%GULP_INJECT_VERSION%%/g
