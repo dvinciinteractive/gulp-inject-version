@@ -1,6 +1,6 @@
 var fs = require('fs'),
     through = require('through2'),
-    gutil = require('gulp-util'),
+    PluginError = require('plugin-error'),
     plugin_name = 'gulp-inject-version',
     defaults = {
         package_file: 'package.json',
@@ -21,12 +21,12 @@ module.exports = function (opts) {
             }
 
             if (file.isStream()) {
-                return callback(new gutil.PluginError(plugin_name, 'doesn\'t support Streams'));
+                return callback(new PluginError(plugin_name, 'doesn\'t support Streams'));
             }
 
             fs.readFile(opts.package_file, 'utf8', function (err, data) {
                 if (err) {
-                    return callback(new gutil.PluginError(plugin_name, opts.package_file + ' could not be read.\n\t' + err.toString()));
+                    return callback(new PluginError(plugin_name, opts.package_file + ' could not be read.\n\t' + err.toString()));
                 } else {
                     try {
                         package_obj = JSON.parse(data);
@@ -41,10 +41,10 @@ module.exports = function (opts) {
                             file.contents = new Buffer(file.contents.toString().replace(opts.replace, version_text));
                             callback(null, file);
                         } else {
-                            return callback(new gutil.PluginError(plugin_name, opts.version_property + ' not found in package data object.'));
+                            return callback(new PluginError(plugin_name, opts.version_property + ' not found in package data object.'));
                         }
                     } catch (ignore) {
-                        return callback(new gutil.PluginError(plugin_name, opts.package_file + ' not valid JSON'));
+                        return callback(new PluginError(plugin_name, opts.package_file + ' not valid JSON'));
                     }
               }
             });
